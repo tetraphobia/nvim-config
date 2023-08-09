@@ -1,1 +1,1 @@
-require("tetra")
+require("tetraphobia")
