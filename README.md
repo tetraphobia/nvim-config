@@ -7,7 +7,7 @@ My neovim config
 Clone this repo to `$HOME/.config/nvim`.
 
 ```bash
-git clone https://github.com/tetraphobia/nvim-config ~/.config/nvim
+git clone git@github.com:tetraphobia/nvim-config.git ~/.config/nvim
 ```
 
 Open something.
