@@ -1,5 +1,5 @@
 -- Filesystem navigation
-vim.keymap.set('n', '<leader>fd', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>fd', vim.cmd.NvimTreeFindFile)
 
 -- Window navigation
 vim.keymap.set('n', '<C-h>', '<C-w>h')

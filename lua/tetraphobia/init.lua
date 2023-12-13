@@ -1,3 +1,4 @@
+require("tetraphobia.tree")
 require("tetraphobia.bootstrap")
 require("tetraphobia.config")
 require("tetraphobia.remap")

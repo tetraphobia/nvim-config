@@ -59,7 +59,7 @@ return require('packer').startup(function(use)
             require("nvim-tree").setup({
                 hijack_cursor = false,
                 view = {
-                    width = 40
+                    width = 30
                 }
             })
         end
