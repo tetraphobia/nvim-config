@@ -49,6 +49,22 @@ return require('packer').startup(function(use)
     -- Autoclose
     use 'm4xshen/autoclose.nvim'
 
+    -- Nvim tree
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = 'nvim-tree/nvim-web-devicons',
+        wants = 'nvim-web-devicons',
+        config = function ()
+            require("nvim-web-devicons").setup()
+            require("nvim-tree").setup({
+                hijack_cursor = false,
+                view = {
+                    width = 40
+                }
+            })
+        end
+    }
+
 
     if packer_bootstrap then
         require('packer').sync()
