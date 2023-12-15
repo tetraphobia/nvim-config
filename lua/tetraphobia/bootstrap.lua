@@ -54,13 +54,24 @@ return require('packer').startup(function(use)
         'nvim-tree/nvim-tree.lua',
         requires = 'nvim-tree/nvim-web-devicons',
         wants = 'nvim-web-devicons',
-        config = function ()
+        config = function()
             require("nvim-web-devicons").setup()
             require("nvim-tree").setup({
                 hijack_cursor = false,
+                git = {
+                    enable = true,
+                },
                 view = {
                     width = 30
-                }
+                },
+                renderer = {
+                    highlight_git = true,
+                    icons = {
+                        show = {
+                            git = true,
+                        },
+                    },
+                },
             })
         end
     }
