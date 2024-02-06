@@ -18,3 +18,11 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 vim.keymap.set('n', '<leader>s', '<C-w>s')
 vim.keymap.set('n', '<leader>s', '<C-w>v')
+
+-- Yanking
+vim.keymap.set('v', '<C-c>', '\"+y')
+
+-- Select All
+vim.keymap.set('n', '<C-a>', 'ggVG')
+vim.keymap.set('i', '<C-a>', '<Esc>ggVG')
+

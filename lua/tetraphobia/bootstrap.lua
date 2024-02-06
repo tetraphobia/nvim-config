@@ -49,6 +49,9 @@ return require('packer').startup(function(use)
     -- Autoclose
     use 'm4xshen/autoclose.nvim'
 
+    -- vimtex
+    use 'lervag/vimtex'
+
     -- Nvim tree
     use {
         'nvim-tree/nvim-tree.lua',
