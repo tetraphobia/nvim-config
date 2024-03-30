@@ -1,5 +1,8 @@
--- Filesystem navigation
-vim.keymap.set('n', '<leader>fd', vim.cmd.NvimTreeFindFile)
+-- Toggle coc-explorer
+vim.keymap.set('n', '<tab>', function() vim.cmd.CocCommand("explorer") end)
+
+-- Dirbuf
+vim.keymap.set('n', '<leader>ef', vim.cmd.Dirbuf)
 
 -- Window navigation
 vim.keymap.set('n', '<C-h>', '<C-w>h')

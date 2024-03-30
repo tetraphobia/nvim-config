@@ -1,20 +1,21 @@
 {
-    "languageserver": {
-        "rust": {
-            "command": "rust-analyzer",
-            "filetypes": ["rust"],
-            "rootPatterns": ["Cargo.toml"]
-        },
-    },
-    "eslint.packageManager": "yarn",
+  "deno.cacheOnSave": true,
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": true,
 
-    "python.analysis.typeCheckingMode": "off",
-    "python.venvPath": "${env:HOME}/.pyenv/versions",
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "~/.pyenv/versions/coc/bin/black",
-    "coc.source.vimtex.filetypes": [
-        "tex",
-        "plaintex",
-        "latex"
-    ]
+  "prettier.disableLanguages": ["typescript", "javascript"],
+
+  "explorer.keyMappings.global": {
+      "i": false,
+      "<tab>": "quit",
+      "-": "gotoParent"
+  },
+
+  "python.analysis.typeCheckingMode": "off",
+  "python.formatting.blackPath": "~/.pyenv/versions/coc/bin/black",
+  "python.formatting.provider": "black",
+  "python.venvPath": "${env:HOME}/.pyenv/versions",
+
+  "tsserver.enable": false,
 }

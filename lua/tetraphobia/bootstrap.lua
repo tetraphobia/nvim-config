@@ -52,29 +52,60 @@ return require('packer').startup(function(use)
     -- vimtex
     use 'lervag/vimtex'
 
+    -- devicons
+    use 'nvim-tree/nvim-web-devicons'
+
     -- Nvim tree
+    -- use {
+    --     'nvim-tree/nvim-tree.lua',
+    --     requires = 'nvim-tree/nvim-web-devicons',
+    --     wants = 'nvim-web-devicons',
+    --     config = function()
+    --         require("nvim-web-devicons").setup()
+    --         require("nvim-tree").setup({
+    --             hijack_cursor = false,
+    --             git = {
+    --                 enable = true,
+    --             },
+    --             view = {
+    --                 width = 30
+    --             },
+    --             renderer = {
+    --                 highlight_git = true,
+    --                 icons = {
+    --                     show = {
+    --                         git = true,
+    --                     },
+    --                 },
+    --             },
+    --         })
+    --     end
+    -- }
+
+    -- Comment
     use {
-        'nvim-tree/nvim-tree.lua',
-        requires = 'nvim-tree/nvim-web-devicons',
-        wants = 'nvim-web-devicons',
+        'numToStr/Comment.nvim',
         config = function()
-            require("nvim-web-devicons").setup()
-            require("nvim-tree").setup({
-                hijack_cursor = false,
-                git = {
-                    enable = true,
+            require('Comment').setup()
+        end
+    }
+
+    -- Oil
+    use {
+        'stevearc/oil.nvim',
+        config = function()
+            require("oil").setup({
+                wants = 'nvim-web-devicons',
+                default_file_explorer = true,
+                columns = {
+                    "icon",
+                    "permissions",
+                    "size",
                 },
-                view = {
-                    width = 30
-                },
-                renderer = {
-                    highlight_git = true,
-                    icons = {
-                        show = {
-                            git = true,
-                        },
-                    },
-                },
+                keymaps = {
+                    ["<"] = "actions.parent",
+                    [">"] = "actions.select"
+                }
             })
         end
     }
