@@ -9,9 +9,9 @@ end
 
 vim.opt.rtp:prepend(install_path)
 
-
 require("lazy").setup({
     -- Telescope
+    'nvim-lua/plenary.nvim',
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.6',
@@ -76,7 +76,8 @@ require("lazy").setup({
                 },
                 keymaps = {
                     ["<"] = "actions.parent",
-                    [">"] = "actions.select"
+                    ["<C-h>"] = false,
+                    ["<C-l>"] = false,
                 }
             })
         end
