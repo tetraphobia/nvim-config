@@ -1,97 +1,69 @@
-local ensure_packer = function()
-    local fn = vim.fn
-    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-        vim.cmd [[packadd packer.nvim]]
-        return true
-    end
-    return false
+-- Bootstrap lazy.nvim
+local fn = vim.fn
+local install_path = fn.stdpath('data') .. '/lazy/lazy.nvim'
+
+if not (vim.uv or vim.loop).fs_stat(install_path) then
+    vim.fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', install_path })
 end
 
-local packer_bootstrap = ensure_packer()
+vim.opt.rtp:prepend(install_path)
 
-return require('packer').startup(function(use)
-    -- Packer
-    use 'wbthomason/packer.nvim'
 
+require("lazy").setup({
     -- Telescope
-    use {
+    {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.5',
+        tag = '0.1.6',
         requires = 'nvim-lua/plenary.nvim'
-    }
+    },
 
     -- Colorscheme
-    use {
-        'Mofiqul/dracula.nvim',
-        as = 'dracula',
-        config = function()
-            vim.cmd('colorscheme dracula')
-        end
-    }
+    -- {
+    --     'Mofiqul/dracula.nvim',
+    --     as = 'dracula',
+    --     config = function()
+    --         vim.cmd('colorscheme dracula')
+    --     end
+    -- },
+
+    {
+        'catppuccin/nvim',
+        name = 'catppuccin',
+        priority = 1000
+    },
 
     -- Treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+    'nvim-treesitter/nvim-treesitter',
 
     -- Vim Fugitive
-    use 'tpope/vim-fugitive'
+    'tpope/vim-fugitive',
 
-    -- LSP
-    use {
+    -- CoC
+    {
         'neoclide/coc.nvim',
         branch = 'release'
-    }
+    },
 
     -- Autoclose
-    use 'm4xshen/autoclose.nvim'
+    'm4xshen/autoclose.nvim',
 
     -- vimtex
-    use 'lervag/vimtex'
+    'lervag/vimtex',
 
     -- devicons
-    use 'nvim-tree/nvim-web-devicons'
-
-    -- Nvim tree
-    -- use {
-    --     'nvim-tree/nvim-tree.lua',
-    --     requires = 'nvim-tree/nvim-web-devicons',
-    --     wants = 'nvim-web-devicons',
-    --     config = function()
-    --         require("nvim-web-devicons").setup()
-    --         require("nvim-tree").setup({
-    --             hijack_cursor = false,
-    --             git = {
-    --                 enable = true,
-    --             },
-    --             view = {
-    --                 width = 30
-    --             },
-    --             renderer = {
-    --                 highlight_git = true,
-    --                 icons = {
-    --                     show = {
-    --                         git = true,
-    --                     },
-    --                 },
-    --             },
-    --         })
-    --     end
-    -- }
+    'nvim-tree/nvim-web-devicons',
 
     -- Comment
-    use {
+    {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
         end
-    }
+    },
 
     -- Oil
-    use {
+    {
         'stevearc/oil.nvim',
         config = function()
             require("oil").setup({
@@ -108,10 +80,6 @@ return require('packer').startup(function(use)
                 }
             })
         end
-    }
+    },
+})
 
-
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-end)
