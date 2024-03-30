@@ -15,7 +15,6 @@ require("lazy").setup({
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.6',
-        requires = 'nvim-lua/plenary.nvim'
     },
 
     -- Colorscheme
@@ -34,7 +33,20 @@ require("lazy").setup({
     },
 
     -- Treesitter
-    'nvim-treesitter/nvim-treesitter',
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ":TSUpdate",
+        config = function()
+            local configs = require("nvim-treesitter.configs")
+
+            configs.setup({
+                ensure_installed = { "c", "lua", "javascript", "typescript", "html", "css", "java", "rust", "markdown" },
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true }
+            })
+        end
+    },
 
     -- Vim Fugitive
     'tpope/vim-fugitive',
@@ -83,4 +95,3 @@ require("lazy").setup({
         end
     },
 })
-
