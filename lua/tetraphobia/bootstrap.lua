@@ -17,15 +17,44 @@ require("lazy").setup({
         tag = '0.1.6',
     },
 
-    -- Colorscheme
-    -- {
-    --     'Mofiqul/dracula.nvim',
-    --     as = 'dracula',
-    --     config = function()
-    --         vim.cmd('colorscheme dracula')
-    --     end
-    -- },
+    -- Debugging
+    'mfussenegger/nvim-dap',
+    {
+        'mxsdev/nvim-dap-vscode-js',
+        config = function()
+            require("dap-vscode-js").setup({
+                debugger_path = vim.fn.resolve(vim.fn.stdpath("data") .. "/lazy/vscode-js-debug"),
+                adapters = { 'chrome', 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost',
+                    'node', 'chrome' },
+            })
+        end
+    },
+    {
+        'microsoft/vscode-js-debug',
+        build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+    },
+    {'nvim-neotest/nvim-nio'},
+    {
+        'rcarriga/nvim-dap-ui',
+        requires = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
+        config = function()
+            require("dapui").setup()
+            local dap, dapui = require("dap"), require("dapui")
 
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open({})
+            end
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close({})
+            end
+            dap.listeners.before.event_exited["dapui_config"] = function()
+                dapui.close({})
+            end
+        end
+
+    },
+
+    -- Colorscheme
     {
         'catppuccin/nvim',
         name = 'catppuccin',
@@ -46,7 +75,8 @@ require("lazy").setup({
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = { "c", "lua", "javascript", "typescript", "html", "css", "java", "rust", "markdown" },
+                ensure_installed = { "c", "lua", "javascript", "typescript", "html", "css", "java", "rust", "markdown",
+                    "tsx" },
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
