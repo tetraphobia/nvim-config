@@ -34,6 +34,12 @@ require("lazy").setup({
 
     -- Treesitter
     {
+        'windwp/nvim-ts-autotag',
+        config = function()
+            require('nvim-ts-autotag').setup()
+        end
+    },
+    {
         'nvim-treesitter/nvim-treesitter',
         build = ":TSUpdate",
         config = function()
@@ -43,10 +49,11 @@ require("lazy").setup({
                 ensure_installed = { "c", "lua", "javascript", "typescript", "html", "css", "java", "rust", "markdown" },
                 sync_install = false,
                 highlight = { enable = true },
-                indent = { enable = true }
+                indent = { enable = true },
             })
         end
     },
+
 
     -- Vim Fugitive
     'tpope/vim-fugitive',

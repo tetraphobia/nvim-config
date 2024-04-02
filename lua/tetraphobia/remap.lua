@@ -1,8 +1,8 @@
 -- Toggle coc-explorer
 vim.keymap.set('n', '<tab>', function() vim.cmd.CocCommand("explorer") end)
 
--- Dirbuf
-vim.keymap.set('n', '<leader>ef', vim.cmd.Dirbuf)
+-- Oil
+vim.keymap.set('n', '<leader>ef', vim.cmd.Oil)
 
 -- Window navigation
 vim.keymap.set('n', '<C-h>', '<C-w>h')
