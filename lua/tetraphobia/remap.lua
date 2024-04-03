@@ -29,6 +29,25 @@ vim.keymap.set('v', '<C-c>', '\"+y')
 vim.keymap.set('n', '<C-a>', 'ggVG')
 vim.keymap.set('i', '<C-a>', '<Esc>ggVG')
 
+-- Fugitive
+vim.keymap.set('n', '<leader>gg', vim.cmd.Git)
+
+vim.keymap.set('n', '<leader>gp', function()
+    vim.cmd.Git('pull')
+end)
+
+vim.keymap.set('n', '<leader>gP', function()
+    vim.cmd.Git('push')
+end)
+
+vim.keymap.set('n', '<leader>gs', function()
+    vim.cmd.Git('status')
+end)
+
+vim.keymap.set('n', '<leader>gd', function()
+    vim.cmd.Git('diff')
+end)
+
 -- CoC Formatting
 vim.keymap.set('n', '<leader>fa', function() vim.cmd.CocCommand("editor.action.format") end, { silent = true })
 
@@ -58,7 +77,7 @@ vim.keymap.set('n', '<leader>fd', "<Plug>(coc-definition)", { silent = true })
 vim.keymap.set('n', '<leader>fi', "<Plug>(coc-implementation)", { silent = true })
 vim.keymap.set('n', '<leader>fr', "<Plug>(coc-references)", { silent = true })
 
--- CoC Sow documentation in preview window
+-- CoC Show documentation in preview window
 function _G.show_docs()
     local cw = vim.fn.expand('<cword>')
     if vim.fn.index({ 'vim', 'help' }, vim.bo.filetype) >= 0 then
@@ -93,3 +112,9 @@ vim.keymap.set("n", "<leader>do", function() require('dap').step_out() end, { si
 
 -- DAP UI
 vim.keymap.set("n", "<leader>du", function() require('dapui').toggle() end, { silent = true })
+
+-- Telescope
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {})
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {})
+vim.keymap.set('n', '<leader>fG', require('telescope.builtin').git_files, {})
