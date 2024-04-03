@@ -1,0 +1,7 @@
+{
+  "name": "nvim",
+  "packageManager": "yarn@4.1.1",
+  "dependencies": {
+    "neovim": "^5.1.0"
+  }
+}
