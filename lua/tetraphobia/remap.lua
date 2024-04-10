@@ -94,6 +94,12 @@ vim.keymap.set("n", "K", '<CMD>lua _G.show_docs()<CR>', { silent = true })
 -- CoC Symbol renaming
 vim.keymap.set("n", "<leader>rs", "<Plug>(coc-rename)", { silent = true })
 
+-- CoC Codeactions
+vim.keymap.set("v", "<leader>a",  "<Plug>(coc-codeaction-selected)")
+vim.keymap.set("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)")
+vim.keymap.set("n", "<leader>ar", "<Plug>(coc-codeaction-refactor)")
+vim.keymap.set("v", "<leader>r", "<Plug>(coc-codeaction-refactor)")
+
 -- CoC Misc
 vim.keymap.set("n", "<leader>cc", vim.cmd.CocCommand, { silent = true })
 vim.keymap.set("n", "<leader>cC", vim.cmd.CocConfig, { silent = true })
@@ -103,8 +109,8 @@ vim.keymap.set("n", "<leader>cs", function() vim.cmd.CocList("snippets") end, { 
 
 -- DAP
 vim.keymap.set("n", "<leader>b", function() require('dap').toggle_breakpoint() end, { silent = true })
-vim.keymap.set("n", "<F5>", function() require('dap').continue() end, { silent = true })
-vim.keymap.set("n", "<F6>", function() require('dap').run_last() end, { silent = true })
+vim.keymap.set("n", "<F5>",      function() require('dap').continue() end, { silent = true })
+vim.keymap.set("n", "<F6>",      function() require('dap').run_last() end, { silent = true })
 
 vim.keymap.set("n", "<leader>ds", function() require('dap').step_over() end, { silent = true })
 vim.keymap.set("n", "<leader>di", function() require('dap').step_into() end, { silent = true })
