@@ -107,18 +107,6 @@ vim.keymap.set("n", "<leader>cd", function() vim.cmd.CocList("diagnostics") end,
 vim.keymap.set("n", "<leader>ce", function() vim.cmd.CocList("extensions") end, { silent = true })
 vim.keymap.set("n", "<leader>cs", function() vim.cmd.CocList("snippets") end, { silent = true })
 
--- DAP
-vim.keymap.set("n", "<leader>b", function() require('dap').toggle_breakpoint() end, { silent = true })
-vim.keymap.set("n", "<F5>",      function() require('dap').continue() end, { silent = true })
-vim.keymap.set("n", "<F6>",      function() require('dap').run_last() end, { silent = true })
-
-vim.keymap.set("n", "<leader>ds", function() require('dap').step_over() end, { silent = true })
-vim.keymap.set("n", "<leader>di", function() require('dap').step_into() end, { silent = true })
-vim.keymap.set("n", "<leader>do", function() require('dap').step_out() end, { silent = true })
-
--- DAP UI
-vim.keymap.set("n", "<leader>du", function() require('dapui').toggle() end, { silent = true })
-
 -- Telescope
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {})
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
