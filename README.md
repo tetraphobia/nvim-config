@@ -1,7 +1,9 @@
 # Tetraphobia Neovim Config
 My neovim config
+
 ## Requirements
 - NPM
+- ripgrep
 
 ## Usage
 Clone this repo to `$HOME/.config/nvim`.
@@ -10,4 +12,7 @@ Clone this repo to `$HOME/.config/nvim`.
 git clone git@github.com:tetraphobia/nvim-config.git ~/.config/nvim
 ```
 
-Open something.
+Install deps
+```bash
+sudo npm install -g tree-sitter-cli
+```
