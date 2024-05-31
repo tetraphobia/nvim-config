@@ -17,19 +17,6 @@ require("lazy").setup({
         tag = '0.1.6',
     },
 
-    -- Debugging
-    -- 'mfussenegger/nvim-dap',
-    -- 'mxsdev/nvim-dap-vscode-js',
-    -- {
-    --     'microsoft/vscode-js-debug',
-    --     build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-    -- },
-    -- 'nvim-neotest/nvim-nio',
-    -- {
-    --     'rcarriga/nvim-dap-ui',
-    --     requires = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
-    -- },
-
     -- Colorscheme
     {
         'catppuccin/nvim',
