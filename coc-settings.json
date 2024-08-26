@@ -1,3 +1,6 @@
 {
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "explorer.keyMappings.global": {
+    "<tab>": "quit"
+  }
 }
