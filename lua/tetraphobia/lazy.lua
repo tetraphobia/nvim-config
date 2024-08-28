@@ -47,4 +47,22 @@ require("lazy").setup({
 
     -- Mini
     { 'echasnovski/mini.nvim', version = false },
+
+    -- Neotest
+    {
+        'nvim-neotest/neotest',
+        dependencies = {
+            'nvim-neotest/nvim-nio',
+            'nvim-lua/plenary.nvim',
+            'antoinemadec/FixCursorHold.nvim',
+            'nvim-treesitter/nvim-treesitter'
+        },
+    },
+
+    -- Neotest adapters
+    'nvim-neotest/neotest-python',
+    'rouge8/neotest-rust',
+    'MarkEmmons/neotest-deno',
+    'rcasia/neotest-java',
+
 })
