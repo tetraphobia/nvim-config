@@ -22,8 +22,13 @@ vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-w>k')
 vim.keymap.set('t', '<C-l>', '<C-\\><C-N><C-w>l')
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
-vim.keymap.set('n', '<leader>s', '<C-w>s')
-vim.keymap.set('n', '<leader>s', '<C-w>v')
+vim.keymap.set('n', '<leader>q', function()
+    -- Close window, but not if it's the last window.
+    local count = vim.api.nvim_list_wins()
+    if #count > 1 then
+        vim.cmd.close()
+    end
+end)
 
 -- Yanking
 vim.keymap.set('v', '<C-c>', '\"+y')
@@ -121,11 +126,13 @@ vim.keymap.set('n', '<leader>nr', function()
     local neotest = require('neotest')
     neotest.run.run()
     neotest.output_panel.open()
+    neotest.summary.open()
 end, {})
 vim.keymap.set('n', '<leader>ns', function()
     local neotest = require('neotest')
     neotest.run.stop()
     neotest.output_panel.close()
+    neotest.summary.close()
 end, {})
 vim.keymap.set('n', '<leader>na', require('neotest').run.attach, {})
 vim.keymap.set('n', '<leader>nt', require('neotest').output_panel.toggle, {})

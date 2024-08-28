@@ -62,7 +62,7 @@ require("lazy").setup({
     -- Neotest adapters
     'nvim-neotest/neotest-python',
     'rouge8/neotest-rust',
-    'MarkEmmons/neotest-deno',
+    'MatrosMartz/neotest-deno',
     'rcasia/neotest-java',
 
 })

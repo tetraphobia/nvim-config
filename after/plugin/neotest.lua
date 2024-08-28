@@ -5,6 +5,9 @@ require("neotest").setup({
         }),
         require("neotest-rust"),
         require("neotest-deno"),
-        require("neotest-java"),
+        require("neotest-java")({
+            ignore_wrapper = true,
+            junit_jar = nil,
+        }),
     }
 })

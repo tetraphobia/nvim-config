@@ -5,7 +5,7 @@
   "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
   "mini.nvim": { "branch": "main", "commit": "b5ee41d2b8ab54f8b6b383b488e822c5cc431871" },
   "neotest": { "branch": "master", "commit": "6d6ad113f56edc7c3f2a77a0836ea8c1b955ebea" },
-  "neotest-deno": { "branch": "main", "commit": "7136b9342aeecb675c7c16a0bde327d7fcb00a1c" },
+  "neotest-deno": { "branch": "main", "commit": "c0963421fac2211f4ee7ef15867403e15ca49d0b" },
   "neotest-java": { "branch": "main", "commit": "d624c32702785aa748a194c96b28923119ca5c5d" },
   "neotest-python": { "branch": "master", "commit": "72603dfdbaad5695160268cb10531a14cc37236e" },
   "neotest-rust": { "branch": "main", "commit": "0418811e1e3499b2501593f2e131d02f5e6823d4" },
