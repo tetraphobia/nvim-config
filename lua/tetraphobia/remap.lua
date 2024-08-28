@@ -1,3 +1,6 @@
+-- Health check
+vim.keymap.set('n', '<leader>ch', vim.cmd.checkhealth)
+
 -- Toggle coc-explorer
 vim.keymap.set('n', '<tab>', function() vim.cmd.CocCommand("explorer") end)
 
