@@ -2,5 +2,8 @@
   "snippets.ultisnips.pythonPrompt": false,
   "explorer.keyMappings.global": {
     "<tab>": "quit"
-  }
+  },
+  "zig.enabled": true,
+  "zig.startUpMessage": true,
+  "zig.path": "zls",
 }
