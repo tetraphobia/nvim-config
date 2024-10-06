@@ -6,7 +6,7 @@ Install dependencies.
 
 ```bash
 # Pacman
-sudo pacman -S python-neovim nodejs npm xclip wl-clipboard fd ripgrep
+sudo pacman -S python-neovim nodejs npm xclip wl-clipboard fd ripgrep zls
 sudo npm install -g neovim tree-sitter-cli
 ```
 
