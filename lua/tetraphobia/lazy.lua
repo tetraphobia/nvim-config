@@ -48,6 +48,26 @@ require("lazy").setup({
     -- Mini
     { 'echasnovski/mini.nvim', version = false },
 
+    -- For managing LSPs
+    {
+        'williamboman/mason.nvim'
+    },
+
+    -- Neotest adapters
+    'nvim-neotest/neotest-python',
+    'rouge8/neotest-rust',
+    'MatrosMartz/neotest-deno',
+    {
+        'rcasia/neotest-java',
+        ft = "java",
+        dependencies = {
+            "mfussenegger/nvim-jdtls",
+            "mfussenegger/nvim-dap",           -- for the debugger
+            "rcarriga/nvim-dap-ui",            -- recommended
+            "theHamsta/nvim-dap-virtual-text", -- recommended
+        },
+    },
+
     -- Neotest
     {
         'nvim-neotest/neotest',
@@ -59,10 +79,5 @@ require("lazy").setup({
         },
     },
 
-    -- Neotest adapters
-    'nvim-neotest/neotest-python',
-    'rouge8/neotest-rust',
-    'MatrosMartz/neotest-deno',
-    'rcasia/neotest-java',
 
 })

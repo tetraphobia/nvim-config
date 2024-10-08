@@ -136,3 +136,7 @@ vim.keymap.set('n', '<leader>ns', function()
 end, {})
 vim.keymap.set('n', '<leader>na', require('neotest').run.attach, {})
 vim.keymap.set('n', '<leader>nt', require('neotest').output_panel.toggle, {})
+
+-- Java stuff
+vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { silent = true})
+vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { silent = true})
