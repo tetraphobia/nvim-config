@@ -1,6 +1,6 @@
-local bootstrap = {}
-
-bootstrap.lazy = require("bootstrap.lazy-nvim")
-bootstrap.depcheck = require("bootstrap.depcheck")
+local bootstrap = {
+	lazy = require("bootstrap.lazy-nvim"),
+	depcheck = require("bootstrap.depcheck"),
+}
 
 return bootstrap
