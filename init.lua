@@ -17,11 +17,11 @@ config.lazy()
 -- Configure colorscheme
 config.colorscheme()
 
--- Configure keymaps
-config.keymap()
-
 -- Configure editor
 config.editor()
 
 -- Configure user commands
 config.commands()
+
+-- Configure keymaps
+config.keymap()
