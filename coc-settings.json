@@ -1,9 +1,23 @@
 {
-  "snippets.ultisnips.pythonPrompt": false,
   "explorer.keyMappings.global": {
     "<tab>": "quit"
   },
+  "coc.preferences.willSaveHandlerTimeout": 2000,
+  "codeLens.enable": true,
+  "python.formatting.provider": "black",
+  "deno.enable": true,
+  "deno.cacheOnSave": true,
+  "deno.codeLens.references": true,
+  "diagnostic-languageserver.enable": true,
+  "diagnostic-languageserver.formatFiletypes": {
+    "python": [
+      "black",
+      "isort",
+      "docformatter"
+    ]
+  },
+  "snippets.ultisnips.pythonPrompt": false,
   "zig.enabled": true,
   "zig.startUpMessage": true,
-  "zig.path": "zls",
+  "zig.path": "~/.local/share/nvim/mason/bin/zls"
 }

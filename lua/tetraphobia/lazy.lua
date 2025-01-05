@@ -79,5 +79,15 @@ require("lazy").setup({
         },
     },
 
+    -- Quarto
+    {
+        "quarto-dev/quarto-nvim",
+        dependencies = {
+            "jmbuhr/otter.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "neovim/nvim-lspconfig"
+        }
+    },
+
 
 })

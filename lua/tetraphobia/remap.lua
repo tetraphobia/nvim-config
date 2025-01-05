@@ -103,7 +103,7 @@ vim.keymap.set("n", "K", '<CMD>lua _G.show_docs()<CR>', { silent = true })
 vim.keymap.set("n", "<leader>rs", "<Plug>(coc-rename)", { silent = true })
 
 -- CoC Codeactions
-vim.keymap.set("v", "<leader>a",  "<Plug>(coc-codeaction-selected)")
+vim.keymap.set("v", "<leader>a", "<Plug>(coc-codeaction-selected)")
 vim.keymap.set("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)")
 vim.keymap.set("n", "<leader>ar", "<Plug>(coc-codeaction-refactor)")
 vim.keymap.set("v", "<leader>r", "<Plug>(coc-codeaction-refactor)")
@@ -138,5 +138,8 @@ vim.keymap.set('n', '<leader>na', require('neotest').run.attach, {})
 vim.keymap.set('n', '<leader>nt', require('neotest').output_panel.toggle, {})
 
 -- Java stuff
-vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { silent = true})
-vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { silent = true})
+vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { silent = true })
+vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { silent = true })
+
+-- Quarto
+vim.keymap.set('n', '<leader>qp', vim.cmd.QuartoPreview, { silent = true })

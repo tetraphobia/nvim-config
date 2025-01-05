@@ -5,4 +5,5 @@ plugin/packer_compiled.lua
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+venv/
 .pnp.*

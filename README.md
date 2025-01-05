@@ -10,6 +10,13 @@ sudo pacman -S python-neovim nodejs npm xclip wl-clipboard fd ripgrep zls
 sudo npm install -g neovim tree-sitter-cli
 ```
 
+For python support, create a virtual env in the config directory.
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install pynvim
+```
+
 Clone this repo to `$HOME/.config/nvim`.
 
 ```bash

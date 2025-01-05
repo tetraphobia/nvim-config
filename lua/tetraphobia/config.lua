@@ -27,3 +27,6 @@ vim.opt.updatetime = 50
 -- Needed for tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Python
+vim.g.python3_host_prog = os.getenv("HOME") .. '/.config/nvim/venv/bin/python'
