@@ -3,6 +3,7 @@ local config = {
     keymap = require("config.keymap"),
     colorscheme = require("config.colorscheme"),
     editor = require("config.editor"),
+    commands = require("config.commands"),
 }
 
 

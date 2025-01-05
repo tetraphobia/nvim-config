@@ -22,3 +22,6 @@ config.keymap()
 
 -- Configure editor
 config.editor()
+
+-- Configure user commands
+config.commands()

@@ -11,9 +11,9 @@ return {
         require('mini.notify').setup()
         require('mini.completion').setup({
             delay = {
-                completion = 0,
+                completion = 10,
                 info = 100,
-                signature = 0,
+                signature = 10,
             }
         })
         require('mini.icons').setup()
