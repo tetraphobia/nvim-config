@@ -1,22 +1,24 @@
 return {
-    'folke/trouble.nvim',
-    opts = {
-        modes = {
-            diagnostics = { auto_open = true },
-            preview_float = {
-                mode = "diagnostics",
-                preview = {
-                    type = "float",
-                    relative = "editor",
-                    border = "rounded",
-                    title = "Preview",
-                    title_pos = "center",
-                    position = { 0, -2 },
-                    size = { width = 0.3, height = 0.3 },
-                    zindex = 200,
-                }
-            }
-        }
-    },
-    cmd = "Trouble",
+	"folke/trouble.nvim",
+	opts = {
+		modes = {
+			lsp_document_symbols = {
+				auto_open = false,
+				open_no_results = true,
+				warn_no_results = false,
+			},
+			diagnostics = {
+				auto_open = false,
+				open_no_results = true,
+				warn_no_results = false,
+				preview = {
+					type = "split",
+					relative = "win",
+					position = "right",
+					size = 0.3,
+				},
+			},
+		},
+	},
+	cmd = "Trouble",
 }

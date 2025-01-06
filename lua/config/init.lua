@@ -4,6 +4,7 @@ local config = {
     colorscheme = require("config.colorscheme"),
     editor = require("config.editor"),
     commands = require("config.commands"),
+    terminal = require("config.terminal")
 }
 
 
