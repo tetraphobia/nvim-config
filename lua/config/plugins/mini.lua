@@ -8,6 +8,12 @@ return {
         require('mini.pairs').setup()
         require('mini.git').setup()
         require('mini.diff').setup()
+        require('mini.indentscope').setup({
+            draw = {
+                animation = require('mini.indentscope').gen_animation.none()
+            },
+            symbol = "|"
+        })
         require('mini.notify').setup()
         require('mini.completion').setup({
             delay = {
@@ -19,6 +25,5 @@ return {
         require('mini.icons').setup()
         require('mini.operators').setup()
         require('mini.surround').setup()
-        require('mini.statusline').setup()
     end
 }
