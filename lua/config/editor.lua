@@ -29,7 +29,7 @@ return function()
     vim.opt.termguicolors = true
 
     -- Keep some lines always visible
-    vim.opt.scrolloff = 12
+    vim.opt.scrolloff = 6
     vim.opt.sidescrolloff = 6
 
     -- Searching
