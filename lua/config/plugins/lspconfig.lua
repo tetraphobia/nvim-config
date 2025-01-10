@@ -22,11 +22,12 @@ return {
 				},
 			},
 		})
-
 		lspconfig.zls.setup({})
 		lspconfig.diagnosticls.setup({})
 		lspconfig.pyright.setup({})
 		lspconfig.rust_analyzer.setup({})
 		lspconfig.denols.setup({})
+		lspconfig.jdtls.setup({})
+        lspconfig.clangd.setup({})
 	end,
 }

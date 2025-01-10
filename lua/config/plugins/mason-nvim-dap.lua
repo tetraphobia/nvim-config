@@ -5,7 +5,7 @@ return {
 		"mfussenegger/nvim-dap",
 	},
 	opts = {
-		ensure_installed = { "codelldb" },
+		ensure_installed = { "codelldb", "debugpy", "cpptools" },
         handlers = {},
 	},
 }

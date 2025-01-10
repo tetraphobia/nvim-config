@@ -12,6 +12,7 @@
   "neovim-codicons": { "branch": "main", "commit": "bd52f75ebde79b5dcb62e5f682543b58364997a7" },
   "nvim-dap": { "branch": "master", "commit": "99807078c5089ed30e0547aa4b52c5867933f426" },
   "nvim-dap-ui": { "branch": "master", "commit": "727c032a8f63899baccb42a1c26f27687e62fc5e" },
+  "nvim-jdtls": { "branch": "master", "commit": "baae618ccc7b6045f7d9453ea0566d1333100740" },
   "nvim-lspconfig": { "branch": "master", "commit": "88157521e890fe7fdf18bee22438875edd6300a6" },
   "nvim-nio": { "branch": "master", "commit": "a428f309119086dc78dd4b19306d2d67be884eee" },
   "nvim-treesitter": { "branch": "master", "commit": "6df6e80417b58abe377c90f5e3f7fe94cf7dfc55" },
