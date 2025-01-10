@@ -4,5 +4,8 @@ return {
 		"williamboman/mason.nvim",
 		"mfussenegger/nvim-dap",
 	},
-	opts = {},
+	opts = {
+		ensure_installed = { "codelldb" },
+        handlers = {},
+	},
 }

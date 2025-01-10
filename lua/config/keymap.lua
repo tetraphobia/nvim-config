@@ -7,6 +7,15 @@ return function()
 		conform.format({ async = true })
 	end, {})
 
+	-- DAP (debugger)
+	local dapui = require("dapui")
+	local dap = require("dap")
+	keymap.set("n", "<leader>Ds", dapui.open)
+	keymap.set("n", "<leader>Dh", dapui.close)
+	keymap.set("n", ".", dap.toggle_breakpoint)
+	keymap.set("n", "n", dap.continue)
+	keymap.set("n", "S", dap.step_over)
+
 	-- Neovim (compiling)
 	keymap.set("n", "<leader>m", vim.cmd.make, {})
 
