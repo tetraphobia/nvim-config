@@ -8,9 +8,11 @@ return {
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		-- Lua
+		-- lspconfig
 		lspconfig.lua_ls.setup({
+			capabilities = capabilities,
 			diagnostics = {
 				underline = true,
 			},
@@ -22,12 +24,14 @@ return {
 				},
 			},
 		})
-		lspconfig.zls.setup({})
-		lspconfig.diagnosticls.setup({})
-		lspconfig.pyright.setup({})
+		lspconfig.zls.setup({ capabilities = capabilities })
+		lspconfig.diagnosticls.setup({ capabilities = capabilities })
+		lspconfig.pyright.setup({ capabilities = capabilities })
 		lspconfig.rust_analyzer.setup({})
-		lspconfig.denols.setup({})
-		lspconfig.jdtls.setup({})
-        lspconfig.clangd.setup({})
+		-- lspconfig.denols.setup({})
+		lspconfig.ts_ls.setup({ capabilities = capabilities })
+		lspconfig.jdtls.setup({ capabilities = capabilities })
+		lspconfig.clangd.setup({ capabilities = capabilities })
+		lspconfig.asm_lsp.setup({ capabilities = capabilities })
 	end,
 }

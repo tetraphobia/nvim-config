@@ -15,13 +15,13 @@ return {
 			symbol = "|",
 		})
 		require("mini.notify").setup()
-		require("mini.completion").setup({
-			delay = {
-				completion = 10,
-				info = 100,
-				signature = 10,
-			},
-		})
+		-- require("mini.completion").setup({
+		-- 	delay = {
+		-- 		completion = 10,
+		-- 		info = 100,
+		-- 		signature = 10,
+		-- 	},
+		-- })
 		require("mini.icons").setup()
 		require("mini.operators").setup()
 		require("mini.surround").setup({

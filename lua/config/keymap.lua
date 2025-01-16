@@ -7,6 +7,10 @@ return function()
 		conform.format({ async = true })
 	end, {})
 
+    -- Code actions
+    keymap.set("n", "<leader>ac", vim.lsp.buf.code_action)
+    keymap.set("v", "<leader>ac", vim.lsp.buf.code_action)
+
 	-- DAP (debugger)
 	local dapui = require("dapui")
 	local dap = require("dap")
@@ -94,40 +98,4 @@ return function()
 	keymap.set("n", "<leader>dd", function()
 		vim.cmd.Trouble("diagnostics toggle pinned=true")
 	end, {})
-
-	-- Mini (completions)
-	keymap.set("i", "<CR>", function() -- Navigate down
-		if vim.fn.pumvisible() ~= 0 then
-			return "<C-y>"
-		end
-		return "<CR>"
-	end, { noremap = true, expr = true })
-
-	keymap.set("i", "<C-j>", function() -- Navigate down
-		if vim.fn.pumvisible() ~= 0 then
-			return "<C-n>"
-		end
-		return "<C-j>"
-	end, { noremap = true, expr = true })
-
-	keymap.set("i", "<C-k>", function() -- Navigate up
-		if vim.fn.pumvisible() ~= 0 then
-			return "<C-p>"
-		end
-		return "<C-k>"
-	end, { noremap = true, expr = true })
-
-	keymap.set("i", "<Tab>", function() -- Navigate down
-		if vim.fn.pumvisible() ~= 0 then
-			return "<C-n>"
-		end
-		return "<Tab>"
-	end, { noremap = true, expr = true })
-
-	keymap.set("i", "<C-Tab>", function() -- Navigate up
-		if vim.fn.pumvisible() ~= 0 then
-			return "<C-p>"
-		end
-		return "<C-Tab>"
-	end, { noremap = true, expr = true })
 end
