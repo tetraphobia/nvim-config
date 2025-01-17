@@ -9,29 +9,29 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local mason_lspconfig = require("mason-lspconfig")
 
-		-- lspconfig
-		lspconfig.lua_ls.setup({
-			capabilities = capabilities,
-			diagnostics = {
-				underline = true,
-			},
-			settings = {
-				Lua = {
+		mason_lspconfig.setup_handlers({
+			function(server_name)
+				require("lspconfig")[server_name].setup({
+					capabilities = capabilities,
+				})
+			end,
+			["lua_ls"] = function()
+				lspconfig.lua_ls.setup({
+					capabilities = capabilities,
 					diagnostics = {
-						globals = { "vim" },
+						underline = true,
 					},
-				},
-			},
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { "vim" },
+							},
+						},
+					},
+				})
+			end,
 		})
-		lspconfig.zls.setup({ capabilities = capabilities })
-		lspconfig.diagnosticls.setup({ capabilities = capabilities })
-		lspconfig.pyright.setup({ capabilities = capabilities })
-		lspconfig.rust_analyzer.setup({})
-		-- lspconfig.denols.setup({})
-		lspconfig.ts_ls.setup({ capabilities = capabilities })
-		lspconfig.jdtls.setup({ capabilities = capabilities })
-		lspconfig.clangd.setup({ capabilities = capabilities })
-		lspconfig.asm_lsp.setup({ capabilities = capabilities })
 	end,
 }

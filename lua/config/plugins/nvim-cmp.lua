@@ -27,7 +27,7 @@ return {
 				},
 			},
 			mapping = {
-				["<CR>"] = cmp.mapping(function(fallback)
+				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						if luasnip.expandable() then
 							luasnip.expand()
