@@ -37,4 +37,5 @@ return function()
 
 	-- Statusline
 	vim.opt.laststatus = 3
+    vim.opt.showmode = false
 end
