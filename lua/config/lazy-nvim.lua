@@ -14,6 +14,7 @@ return function()
 		},
 		checker = {
 			enabled = true,
+            notify = false
 		},
 	})
 end
