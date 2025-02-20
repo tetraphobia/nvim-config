@@ -17,7 +17,6 @@ return function()
 	keymap.set("n", "<leader>D", dapui.toggle)
 	keymap.set("n", ".", dap.toggle_breakpoint)
 	keymap.set("n", "<leader>c", dap.continue)
-	keymap.set("n", "<leader>n", dap.next)
 	keymap.set("n", "<leader>S", dap.step_over)
 	keymap.set("n", "<leader>s", dap.step_into)
 

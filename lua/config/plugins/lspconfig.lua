@@ -17,6 +17,15 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+            ["clangd"] = function()
+                lspconfig.clangd.setup({
+                    capabilities = capabilities,
+                    cmd = {
+                        "clangd",
+                        "--fallback-style=webkit"
+                    }
+                })
+            end,
 			["lua_ls"] = function()
 				lspconfig.lua_ls.setup({
 					capabilities = capabilities,
