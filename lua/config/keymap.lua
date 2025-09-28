@@ -3,8 +3,9 @@ return function()
 
 	-- Conform (formatting)
 	keymap.set("n", "<leader>fo", function()
-		local conform = require("conform")
-		conform.format({ async = true })
+        vim.lsp.buf.format()
+		-- local conform = require("conform")
+		-- conform.format({ async = true })
 	end, {})
 
     -- Code actions
