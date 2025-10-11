@@ -28,3 +28,6 @@ config.terminal()
 
 -- Configure keymaps
 config.keymap()
+
+-- Configure dap
+config.dap()

@@ -5,6 +5,7 @@ local config = {
 	editor = require("config.editor"),
 	commands = require("config.commands"),
 	terminal = require("config.terminal"),
+    dap = require("config.dap"),
 }
 
 return config

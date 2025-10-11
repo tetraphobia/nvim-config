@@ -13,8 +13,8 @@ Upon launching, you will likely be greeted by a bunch of warnings about missing 
 Install the ones you want, then run `touch $HOME/.config/nvim/.nodepcheck` to disable the warnings.
 
 ## Todo
-- [ ] Drop lspconfig for `vim.lsp.config` api for Neovim 0.11.
-- [ ] Set up DAP and DAP UI
+- [x] Drop lspconfig for `vim.lsp.config` api for Neovim 0.11.
+- [x] Set up DAP and DAP UI
 
 ## Credits
 Owl ASCII art made by Joan Stark.
