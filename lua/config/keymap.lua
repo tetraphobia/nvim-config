@@ -12,6 +12,10 @@ return function()
     keymap.set("n", "<leader>ac", vim.lsp.buf.code_action)
     keymap.set("v", "<leader>ac", vim.lsp.buf.code_action)
 
+    -- Code navigation
+    keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
+    keymap.set("n", "<leader>gd", vim.lsp.buf.declaration)
+
 	-- DAP (debugger)
 	local dapui = require("dapui")
 	local dap = require("dap")

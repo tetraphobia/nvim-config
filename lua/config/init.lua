@@ -6,6 +6,7 @@ local config = {
 	commands = require("config.commands"),
 	terminal = require("config.terminal"),
     dap = require("config.dap"),
+    filetypes = require("config.filetypes"),
 }
 
 return config

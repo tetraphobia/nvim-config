@@ -31,3 +31,6 @@ config.keymap()
 
 -- Configure dap
 config.dap()
+
+-- Configure filetypes
+config.filetypes()
